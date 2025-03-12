@@ -7,12 +7,42 @@ body {
     text-align: center;
     color: #3e2723;
     padding: 20px;
+    overflow: hidden;
 }
 
 .container {
     max-width: 800px;
     margin: auto;
     padding: 20px;
+}
+
+/* === START PAGE === */
+.start-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.start-text {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.school-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -22,7 +52,6 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     font-family: 'Special Elite', monospace;
-    margin-bottom: 20px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -31,6 +60,7 @@ button:hover {
     transform: scale(1.1);
 }
 
+/* === POEM PAGE === */
 .hidden {
     display: none;
 }
@@ -45,7 +75,6 @@ button:hover {
     border-left: 5px solid #8b7d6b;
     text-align: left;
     padding-left: 20px;
-    position: relative;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -53,7 +82,6 @@ button:hover {
     font-size: 20px;
     line-height: 1.8;
     white-space: pre-wrap;
-    position: relative;
 }
 
 #poem::after {
@@ -63,6 +91,7 @@ button:hover {
     animation: blink 0.7s infinite;
 }
 
+/* === ANIMATIONS === */
 @keyframes blink {
     50% { opacity: 0; }
 }
@@ -70,13 +99,4 @@ button:hover {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-.signature {
-    text-align: right;
-    font-size: 18px;
-    margin-top: 20px;
-    font-style: italic;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out 4s forwards;
 }
