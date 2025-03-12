@@ -23,23 +23,35 @@ const stanzas = [
 
 let index = 0;
 const stanzaElement = document.getElementById("stanza");
+const poemContainer = document.getElementById("poem-container");
+const startScreen = document.querySelector(".start-screen");
+const startButton = document.getElementById("start-btn");
+const bgMusic = document.getElementById("bg-music");
 
-function typeWriterEffect(text, i = 0) {
+function typeWriterEffect(text, i = 0, callback) {
     if (i < text.length) {
         stanzaElement.innerHTML += text.charAt(i);
-        setTimeout(() => typeWriterEffect(text, i + 1), 50); // Speed of typing
+        setTimeout(() => typeWriterEffect(text, i + 1, callback), 50); // Speed of typing
+    } else {
+        setTimeout(callback, 2000); // Delay before next stanza
     }
 }
 
 function nextStanza() {
     if (index < stanzas.length) {
         stanzaElement.innerHTML = ""; // Clear previous stanza
-        typeWriterEffect(stanzas[index]);
-        index++;
+        typeWriterEffect(stanzas[index], 0, () => {
+            index++;
+            nextStanza();
+        });
     } else {
         stanzaElement.innerHTML = "The End."; // End message
     }
 }
 
-// Start with the first stanza
-nextStanza();
+startButton.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    poemContainer.style.display = "block";
+    bgMusic.play();
+    nextStanza();
+});
