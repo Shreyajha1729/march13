@@ -2,7 +2,10 @@ document.getElementById('startButton').addEventListener('click', function() {
     let music = document.getElementById('backgroundMusic');
     music.play();
 
+    let startPage = document.getElementById('startPage');
     let poemContainer = document.getElementById('poem-container');
+    
+    startPage.style.display = "none";
     poemContainer.classList.remove('hidden');
 
     let poemElement = document.getElementById('poem');
@@ -99,18 +102,15 @@ Indeed the best day ever: March 13❤️
     `;
 
     let index = 0;
-    let speed = 50; 
+    let speed = 85; // Slower typewriter effect (154 BPM friendly)
 
     function typeWriter() {
         if (index < poemText.length) {
             poemElement.innerHTML += poemText.charAt(index);
             index++;
             setTimeout(typeWriter, speed);
-        } else {
-            document.querySelector('.signature').style.opacity = '1';
         }
     }
 
     typeWriter();
-    this.style.display = "none";
 });
