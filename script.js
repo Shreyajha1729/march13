@@ -2,9 +2,10 @@ document.getElementById('startButton').addEventListener('click', function() {
     let music = document.getElementById('backgroundMusic');
     music.play();
 
-    let poemContainer = document.getElementById('poem');
+    let poemContainer = document.getElementById('poem-container');
     poemContainer.classList.remove('hidden');
 
+    let poemElement = document.getElementById('poem');
     let poemText = `
 At school, I was about to walk inside,
 Felt like someone is watching me from side.
@@ -98,16 +99,18 @@ Indeed the best day ever: March 13❤️
     `;
 
     let index = 0;
-    let speed = 50; // Typing speed in milliseconds
+    let speed = 50; 
 
     function typeWriter() {
         if (index < poemText.length) {
-            poemContainer.innerHTML += poemText.charAt(index);
+            poemElement.innerHTML += poemText.charAt(index);
             index++;
             setTimeout(typeWriter, speed);
+        } else {
+            document.querySelector('.signature').style.opacity = '1';
         }
     }
 
     typeWriter();
-    this.style.display = "none"; // Hide the button after clicking
+    this.style.display = "none";
 });
