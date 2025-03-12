@@ -58,7 +58,7 @@ My exam got over,
 In just one hour.
 
 I saw him outside,
-A guy with soft siren eyes.
+A guy with soft siren eyed.
 
 We made eye contact, a smile on his face,
 I blushed really hard, my heart felt the race.
@@ -91,7 +91,7 @@ Then we reached home, the day was about to wrap,
 "The best day ever" I put this on status on WhatsApp.
 
 That night, we chatted and relived the day,
-To meet him again and everyday my heart prays.
+To meet him again and everyday my heart pray.
 
 The day I met my soulmate not in dream,
 Indeed the best day ever: March 13❤️
