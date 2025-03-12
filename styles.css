@@ -1,36 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fef3f3;
+    background: url('paper-texture.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Special Elite', monospace;
     text-align: center;
-    padding: 50px;
-}
-
-.start-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    background-color: #ff7b7b;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #ff5252;
+    color: #333;
+    padding: 20px;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: auto;
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: #eae0c8;
+    border: 2px solid #8b7d6b;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Special Elite', monospace;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background: #d6c3a3;
+}
+
+.hidden {
+    display: none;
+}
+
+#poem {
+    font-size: 20px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    text-align: left;
+    padding: 10px;
+    margin: auto;
+    max-width: 600px;
+    border-left: 4px solid #8b7d6b;
+    padding-left: 15px;
 }
