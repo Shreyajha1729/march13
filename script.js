@@ -104,13 +104,16 @@ Indeed the best day ever: March 13❤️
     let index = 0;
     let speed = 85; // Slower typewriter effect (154 BPM friendly)
 
-    function typeWriter() {
-        if (index < poemText.length) {
-            poemElement.innerHTML += poemText.charAt(index);
-            index++;
-            setTimeout(typeWriter, speed);
+    function typeWriterEffect(element, text, speed) {
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            element.scrollIntoView({ behavior: "smooth", block: "end" }); // Scrolls as text appears
+            setTimeout(type, speed);
         }
     }
-
-    typeWriter();
-});
+    type();
+    }
+    
