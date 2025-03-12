@@ -4,7 +4,7 @@ document.getElementById('startButton').addEventListener('click', function() {
 
     let startPage = document.getElementById('startPage');
     let poemContainer = document.getElementById('poem-container');
-    
+
     startPage.style.display = "none";
     poemContainer.classList.remove('hidden');
 
@@ -101,19 +101,22 @@ The day I met my soulmate not in dream,
 Indeed the best day ever: March 13❤️
     `;
 
-    let index = 0;
-    let speed = 85; // Slower typewriter effect (154 BPM friendly)
+    let speed = 100; // Adjusted for better sync with 154 BPM
+    typeWriterEffect(poemElement, poemText, speed);
+});
 
-    function typeWriterEffect(element, text, speed) {
+function typeWriterEffect(element, text, speed) {
     let i = 0;
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
-            element.scrollIntoView({ behavior: "smooth", block: "end" }); // Scrolls as text appears
+
+            // Smooth scroll as text appears
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+
             setTimeout(type, speed);
         }
     }
     type();
-    }
-    
+}
