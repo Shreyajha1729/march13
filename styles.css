@@ -100,3 +100,13 @@ button:hover {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.poem-container {
+    max-height: none;  /* Ensures it can expand */
+    overflow-y: visible;  /* Allows scrolling */
+}
+
+html, body {
+    overflow-y: auto;  /* Allows vertical scrolling */
+    scroll-behavior: smooth;  /* Smooth scrolling */
+}
